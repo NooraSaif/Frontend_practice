@@ -1,0 +1,210 @@
+/* ==========================================================================
+   AUTHENTICATION LAYOUT & COMPONENTS
+   ========================================================================== */
+
+/* Full-Screen Centered Canvas */
+.auth-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-surface);
+  padding: var(--space-md);
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 440px;
+  margin-inline: auto;
+}
+
+/* Auth Card */
+.auth-card {
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-surface-border);
+  border-radius: var(--radius-md);
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  box-shadow: var(--shadow-md);
+}
+
+/* Header Section */
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--space-md);
+  
+  & .auth-logo {
+    display: inline-block;
+    font-size: var(--fs-md);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--clr-primary);
+  }
+
+  & .auth-title {
+    font-size: var(--fs-lg);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  & .auth-subtitle {
+    font-size: var(--fs-sm);
+    color: var(--clr-text-muted);
+    margin-top: var(--space-xs);
+  }
+}
+
+/* Social Login Button */
+.auth-social-group {
+  margin-bottom: var(--space-md);
+}
+
+.btn-social {
+  width: 100%;
+  background-color: var(--clr-bg);
+  color: var(--clr-text-main);
+  border: 1px solid var(--clr-surface-border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0.65em 1em;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+
+  &:hover {
+    background-color: var(--clr-surface);
+  }
+}
+
+/* Divider Line */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--clr-text-muted);
+  font-size: var(--fs-sm);
+  margin-block: var(--space-md);
+
+  &::before, &::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--clr-surface-border);
+  }
+
+  & span {
+    padding-inline: var(--space-xs);
+  }
+}
+
+/* Form Controls */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.label-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-label {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--clr-text-main);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.65em 0.85em;
+  font-size: var(--fs-base);
+  font-family: inherit;
+  border: 1px solid var(--clr-surface-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--clr-bg);
+  color: var(--clr-text-main);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+
+  &:focus {
+    outline: none;
+    border-color: var(--clr-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+
+  &::placeholder {
+    color: var(--clr-text-muted);
+    opacity: 0.6;
+  }
+}
+
+/* Checkbox & Options */
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fs-sm);
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  cursor: pointer;
+  color: var(--clr-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.form-checkbox {
+  accent-color: var(--clr-primary);
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Links & Buttons */
+.form-link {
+  font-size: var(--fs-sm);
+  color: var(--clr-primary);
+  font-weight: 500;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.form-link-bold {
+  color: var(--clr-primary);
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn-block {
+  width: 100%;
+  padding: 0.75em;
+}
+
+/* Errors & States */
+.form-error {
+  display: none; /* Toggle via JavaScript during validation */
+  font-size: calc(var(--fs-sm) - 0.1rem);
+  color: #dc2626;
+}
+
+/* Card Footer Link */
+.auth-card-footer {
+  margin-top: var(--space-md);
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+}
